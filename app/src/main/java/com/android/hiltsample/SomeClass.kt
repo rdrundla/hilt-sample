@@ -6,14 +6,14 @@ import javax.inject.Inject
 @ActivityRetainedScoped
 class SomeClass
 @Inject
-constructor() {
+constructor(
+        var someOtherThing: SomeOtherThing
+) {
     fun doSomeThing(): String {
         return "Hello, see i did some thing!"
     }
 
-/*
     fun doSomeOtherThing(): String {
         return someOtherThing.doSomeOtherThing()
     }
-*/
 }
