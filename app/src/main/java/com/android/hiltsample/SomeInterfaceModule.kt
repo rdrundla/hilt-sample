@@ -1,6 +1,5 @@
 package com.android.hiltsample
 
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,9 +20,17 @@ abstract class SomeInterfaceModule {
 @InstallIn(ActivityComponent::class)
 class SomeInterfaceModule {
 
+    @Impl1
     @ActivityScoped
     @Provides
-    fun bindSomeInterface(): SomeInterface {
-        return SomeInterfaceImpl()
+    fun bindSomeInterface1(): SomeInterface {
+        return SomeInterfaceImpl1()
+    }
+
+    @Impl2
+    @ActivityScoped
+    @Provides
+    fun bindSomeInterface2(): SomeInterface {
+        return SomeInterfaceImpl2()
     }
 }

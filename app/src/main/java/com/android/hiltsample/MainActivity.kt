@@ -11,8 +11,13 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var someClass: SomeClass
 
+    @Impl1
     @Inject
-    lateinit var someInterface: SomeInterface
+    lateinit var someInterface1: SomeInterface
+
+    @Impl2
+    @Inject
+    lateinit var someInterface2: SomeInterface
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         println(someClass.doSomeThing())
         println(someClass.doSomeOtherThing())
-        println(someInterface.getSomeString())
+        println(someInterface1.getSomeString())
+        println(someInterface2.getSomeString())
     }
 }
